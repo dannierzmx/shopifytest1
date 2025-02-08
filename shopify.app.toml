@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "c08d85b79eab2a94ef9e05c1c4f35c99"
+application_url = "https://ready-dassie-obviously.ngrok-free.app"
+embedded = true
+name = "test2.8"
+handle = "test2-1212"
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "ooooverdooo.myshopify.com"
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://ready-dassie-obviously.ngrok-free.app/auth/callback",
+  "https://ready-dassie-obviously.ngrok-free.app/auth/shopify/callback",
+  "https://ready-dassie-obviously.ngrok-free.app/api/auth/callback"
+]
+
+[pos]
+embedded = false
